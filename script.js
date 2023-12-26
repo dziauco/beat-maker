@@ -21,13 +21,13 @@ function getElements() {
     return function () {
       if (sounds[index].loop) {
         sounds[index].loop = false;
-        sounds[index].stop();
+        sounds[index].pause();
       } else {
         sounds[index].currentTime = 0;
         sounds[index].loop = true;
         sounds[index].play();
+        createBubble(index);
       }
-      createBubble(index);
     }
   }
 
